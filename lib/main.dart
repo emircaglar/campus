@@ -4,6 +4,7 @@ import 'package:untitled1/home.dart';
 import 'package:untitled1/providers/navigator.dart';
 import 'package:untitled1/settings.dart';
 import 'package:untitled1/study.dart';
+import 'package:untitled1/public.dart';
 
 import 'about.dart';
 
@@ -44,7 +45,7 @@ class Bildung extends StatelessWidget {
 class MainPage extends StatelessWidget {
 //const HomePage({Key? key}) : super(key: key);
   final PageController _pageController = PageController(initialPage: 0);
-  List<Widget> homePages = [Home(), About(), Study(), Settings()];
+  List<Widget> homePages = [Home(), About(), Study(),Public(),Settings()];
 
 //homePages[context.watch()<NavigatorProvider>().currontIndex]
   @override
@@ -67,7 +68,7 @@ class MainPage extends StatelessWidget {
         onPageChanged: (index) {
           context.read<NavigatorProvider>().currontIndex;
         },
-        children: [Home(), About(), Study(), Settings()],
+        children: [Home(), About(), Study(),Public(), Settings()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -84,6 +85,10 @@ class MainPage extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: 'Study',
+            backgroundColor: Colors.purple,
+          ),BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'Public',
             backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
