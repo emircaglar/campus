@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: RichText(
                 text: TextSpan(
                   text:
@@ -142,9 +142,15 @@ class HomeoptionsContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.green),
-      child: Column(
-        children: [Icon(buttomIcon), Text(bottumText)],
+          borderRadius: BorderRadius.circular(10), color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15.0),
+        child: Column(
+          children: [
+            Icon(buttomIcon),
+            SizedBox(height: media.height * 0.02),
+            Text(bottumText,style: TextStyle(color: Colors.white),)],
+        ),
       ),
       width: media.width * .3,
       height: media.height * .15,
