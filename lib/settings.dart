@@ -6,8 +6,43 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Settings Page'),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Text("Kursen",
+                    textAlign: TextAlign.start,
+                    style:
+                        TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              ],
+            ),
+          ),
+          Image.asset(
+            "images/campus.png",
+            height: 50,
+          ),
+
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+
+              Text("**********************"),
+              Text("**********************"),
+              Text("**********************"),
+              Text("**********************"),
+              Text("**********************"),
+
+
+
+            ],
+          ),
+        ),
+
+
+        ],
       ),
     );
   }
