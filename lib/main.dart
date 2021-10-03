@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled1/home.dart';
@@ -36,6 +37,7 @@ class Bildung extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        dividerColor: Colors.transparent,
       ),
       home: MainPage(),
     );
@@ -56,19 +58,51 @@ class MainPage extends StatelessWidget {
         title: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            child: Image.asset(
-              "images/campus.png",
-              height: 50,
-            ),
+              child:Image.asset(
+                "images/campus.png",
+                height: 50,
+              ),
           ),
         ),
       ),
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          context.read<NavigatorProvider>().currontIndex;
-        },
-        children: [Home(), About(), Study(),Public(), Settings()],
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8,8,8,0),
+            child: RichText(
+              text: TextSpan(
+                text:
+                'A religious education program for secondary school students to build resilience against',
+                style: TextStyle(color: Colors.black),
+                children: [
+                  TextSpan(
+                      text: 'polarization',
+                      style: TextStyle(color: Colors.blue)),
+                  TextSpan(
+                    text: 'and',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  TextSpan(
+                      text: 'radicalitazion.',
+                      style: TextStyle(color: Colors.blue)),
+                ],
+              ),
+            ),
+          ),
+
+
+
+
+          Flexible(
+            child: PageView(
+              controller: _pageController,
+              onPageChanged: (index) {
+                context.read<NavigatorProvider>().currontIndex=index;
+              },
+              children: [Home(), About(), Study(),Public(), Settings()],
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

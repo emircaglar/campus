@@ -11,28 +11,6 @@ class Home extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: RichText(
-                text: TextSpan(
-                  text:
-                      'A religious education program for secondary school students to build resilience against',
-                  style: TextStyle(color: Colors.black),
-                  children: [
-                    TextSpan(
-                        text: 'polarization',
-                        style: TextStyle(color: Colors.blue)),
-                    TextSpan(
-                      text: 'and',
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    TextSpan(
-                        text: 'radicalitazion.',
-                        style: TextStyle(color: Colors.blue)),
-                  ],
-                ),
-              ),
-            ),
             Row(
               children: [
                 Padding(
