@@ -30,24 +30,35 @@ class Study extends StatelessWidget {
                 children: [
                   Container(
                     child: ExpansionTile(
+                      textColor:Colors.black,
                       trailing: Text(""),
-                      title: Text("Kursen",style: TextStyle(fontSize: 20),),
-                      subtitle: Text("Kursen teilnehmerInformation about the project Information about the project"),
+                      title: Text(
+                        "Kursen",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      subtitle: Text(
+                          "Kursen teilnehmerInformation about the project Information about the project"),
                       children: [
-                        HomeoptionsContainer(
-                          media: media,
-                          bottumText: 'Courses',
-                          buttomIcon: Icons.access_alarm,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            HomeUser(media: media,color:Colors.grey,title:"ali"),
+                            HomeUser(media: media,color:Colors.grey,title:"ali"),
+                          ],
                         ),
-                        HomeoptionsContainer(
-                          media: media,
-                          bottumText: 'Methodolgy',
-                          buttomIcon: Icons.access_alarm,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            HomeUser(media: media,color:Colors.grey,title:"ali"),
+                            HomeUser(media: media,color:Colors.grey,title:"ali"),
+                          ],
                         ),
-                        HomeoptionsContainer(
-                          media: media,
-                          bottumText: 'Books',
-                          buttomIcon: Icons.access_alarm,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            HomeUser(media: media,color:Colors.grey,title:"ali"),
+                            HomeUser(media: media,color:Colors.grey,title:"ali"),
+                          ],
                         ),
                       ],
                     ),
@@ -75,7 +86,8 @@ class Study extends StatelessWidget {
                           "Über uns",
                           style: TextStyle(fontSize: 24),
                         ),
-                        Text("Information über the projectInformation about the project Information about the project Information about the project"),
+                        Text(
+                            "Information über the projectInformation about the project Information about the project Information about the project"),
                       ],
                     ),
                   ),
@@ -95,7 +107,8 @@ class Study extends StatelessWidget {
                           "About us",
                           style: TextStyle(fontSize: 24),
                         ),
-                        Text("Information about the project Information about the project Information about the project"),
+                        Text(
+                            "Information about the project Information about the project Information about the project"),
                       ],
                     ),
                   ),
@@ -115,7 +128,8 @@ class Study extends StatelessWidget {
                           "About us",
                           style: TextStyle(fontSize: 24),
                         ),
-                        Text("Information about the project Information about the project Information about the project"),
+                        Text(
+                            "Information about the project Information about the project Information about the project"),
                       ],
                     ),
                   ),
@@ -134,7 +148,8 @@ class Study extends StatelessWidget {
                           "About us",
                           style: TextStyle(fontSize: 24),
                         ),
-                        Text("Information about the project Information about the project Information about the project"),
+                        Text(
+                            "Information about the project Information about the project Information about the project"),
                       ],
                     ),
                   ),
@@ -143,6 +158,38 @@ class Study extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class HomeUser extends StatelessWidget {
+  const HomeUser({
+    Key? key,
+    required this.media,
+    required this.title,
+    required this.color,
+  }) : super(key: key);
+
+  final Size media;
+  final String title;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 4),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: color,
+      ),
+      width: media.width * .3,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
