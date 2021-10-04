@@ -64,10 +64,10 @@ class Study extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16.0, vertical: 24),
-                    margin: EdgeInsets.only(bottom: 8),
+                    margin: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.amberAccent),
+                        color: Colors.blue[100]),
                     width: media.width * .9,
                   ),
                   Container(
@@ -76,7 +76,7 @@ class Study extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.amberAccent),
+                        color: Colors.blue[100]),
                     width: media.width * .9,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -97,7 +97,7 @@ class Study extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.amberAccent),
+                        color: Colors.blue[100]),
                     width: media.width * .9,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -118,7 +118,7 @@ class Study extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.amberAccent),
+                        color: Colors.blue[100]),
                     width: media.width * .9,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,7 +138,7 @@ class Study extends StatelessWidget {
                         horizontal: 16.0, vertical: 24),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.amberAccent),
+                        color: Colors.blue[100]),
                     width: media.width * .9,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
