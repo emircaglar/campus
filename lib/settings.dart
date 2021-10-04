@@ -19,24 +19,40 @@ class Settings extends StatelessWidget {
               ],
             ),
           ),
-          Image.asset(
-            "images/campus.png",
-            height: 50,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              "images/campus.png",
+              height: 100,
+            ),
           ),
 
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-
-              Text("**********************"),
-              Text("**********************"),
-              Text("**********************"),
-              Text("**********************"),
-              Text("**********************"),
-
-
-
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8,8,8,0),
+                child: RichText(
+                  text: TextSpan(
+                    text:
+                    'A religious education program for secondary school students to build resilience against',
+                    style: TextStyle(color: Colors.black),
+                    children: [
+                      TextSpan(
+                          text: 'polarization',
+                          style: TextStyle(color: Colors.blue)),
+                      TextSpan(
+                        text: 'and',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      TextSpan(
+                          text: 'radicalitazion.',
+                          style: TextStyle(color: Colors.blue)),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

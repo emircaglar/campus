@@ -99,7 +99,7 @@ class MainPage extends StatelessWidget {
               onPageChanged: (index) {
                 context.read<NavigatorProvider>().currontIndex=index;
               },
-              children: [Home(), About(), Study(),Public(), Settings()],
+              children: [Home(), About(), Study(), Settings()],
             ),
           ),
         ],
@@ -119,10 +119,6 @@ class MainPage extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: 'Study',
-            backgroundColor: Colors.purple,
-          ),BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Public',
             backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
