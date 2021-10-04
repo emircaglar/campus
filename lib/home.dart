@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -16,9 +17,10 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text("You Are",
-                      textAlign: TextAlign.start,
+                    textAlign: TextAlign.start,
                       style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
