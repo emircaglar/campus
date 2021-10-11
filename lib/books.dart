@@ -45,9 +45,9 @@ class Books extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   BookContainer(
-                    media: media,
+                    media: media,image:"images/b11.png",
                   ),BookContainer(
-                    media: media,
+                    media: media,image:"images/a11.jpg",
                   )
                 ],
               ),
@@ -63,9 +63,11 @@ class BookContainer extends StatelessWidget {
   const BookContainer({
     Key? key,
     required this.media,
+    required this.image,
   }) : super(key: key);
 
   final Size media;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +78,7 @@ class BookContainer extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
-                image: AssetImage("images/campus.png"),
+                image: AssetImage(image),
               )),
           width: media.width * .3,
           height: media.height * .15,

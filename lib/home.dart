@@ -112,18 +112,19 @@ class Home extends StatelessWidget {
                         media: media,
                         bottumText: 'Startseite',
                         buttomIcon: Icons.access_alarm,
-                        navigate: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Kursen()),
-                      );
-                      }
-                        ,
+
+
                       ),
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Kurse',
                         buttomIcon: Icons.app_registration,
+                          navigate: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Kursen()),
+                            );
+                          }
                       ),
                       HomeoptionsContainer(
                         media: media,

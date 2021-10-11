@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -79,9 +80,12 @@ class Kursen extends StatelessWidget {
                         color: Colors.blue[100]),
                     width: media.width * .9,
                   ),
-                  StudyContainer(media: media,title:"About us", zweitetitle:"Letzte Dialog Information about the project Information about the project Information about the project"),
-                  StudyContainer(media: media,title:"About us",zweitetitle:"Letzte Dialog Information about the project Information about the project Information about the project"),
-                  StudyContainer(media: media,title:"About us",zweitetitle:"Letzte Dialog Information about the project Information about the project Information about the project"),
+                  StudyContainer(media: media,title:"Allgemeiner Kurs", zweitetitle:'Beginn: 04.10.202',drittetitle: 'Mo-Do. 17:30 bis 20:40 Uhr', ),
+                  //Mo-Do. 17:30 bis 20:40 Uhr'''
+                  StudyContainer(media: media,title:"Zweitschriftlernerkurs",zweitetitle:"Beginn: 26.01.2022",drittetitle: '09:00 bis 13:00 Uhr',),
+                  StudyContainer(media: media,title:"Allgemeiner Kurs",zweitetitle:"Beginn: 14.03.2021",drittetitle: '09:00 bis 13:00 Uhr',),
+                  StudyContainer(media: media,title:"Allgemeiner Kurs",zweitetitle:"Beginn: 14.03.2022",drittetitle: 'Mo-Do. 18:00 bis 21:15 Uhr',),
+                  StudyContainer(media: media,title:"Alphabetisierungskurs",zweitetitle:"Beginn: 28.03.2022",drittetitle: '09:00 bis 13:00 Uhr',),
 
                 ],
               ),
@@ -100,11 +104,13 @@ class StudyContainer extends StatelessWidget {
     required this.media,
     required this.title,
     required this.zweitetitle,
+    required this.drittetitle,
   }) : super(key: key);
 
   final Size media;
   final String title;
   final String zweitetitle;
+  final String drittetitle;
 
   @override
   Widget build(BuildContext context) {
@@ -120,12 +126,15 @@ class StudyContainer extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 24),
+            style: TextStyle(fontSize: 24,),
           ),
           Divider(),
 
           Text(
-              zweitetitle),
+              zweitetitle,textAlign: TextAlign.start,),
+          Divider(),
+          Text(
+              drittetitle,textAlign: TextAlign.start,),
         ],
       ),
     );
