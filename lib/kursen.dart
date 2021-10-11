@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'home.dart';
 
-class Study extends StatelessWidget {
-  const Study({Key? key}) : super(key: key);
+class Kursen extends StatelessWidget {
+  const Kursen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

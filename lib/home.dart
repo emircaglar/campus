@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled1/study.dart';
+import 'package:untitled1/kursen.dart';
 
 import 'books.dart';
 
@@ -17,10 +17,14 @@ class Home extends StatelessWidget {
 
          title: Padding(
            padding: const EdgeInsets.all(8.0),
-           child: Container(child: Text("Prisma Lernzentrum e.V. - Homburg",style: TextStyle(fontSize: 15),)),
+           child: Center(
+             child: Container(child: Image.asset("images/prisma1.png",height: 50,),
+             ),
+           ),
+           ),
          ),
 
-      ),
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
@@ -111,7 +115,7 @@ class Home extends StatelessWidget {
                         navigate: () {
                       Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Study()),
+                      MaterialPageRoute(builder: (context) => Kursen()),
                       );
                       }
                         ,
