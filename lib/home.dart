@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled1/study.dart';
+
+import 'books.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -7,36 +10,78 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
+    var data = MediaQuery.of(context);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.cyan,
+
+         title: Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Container(child: Text("Prisma Lernzentrum e.V. - Homburg",style: TextStyle(fontSize: 15),)),
+         ),
+
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
           children: [
+            /*Padding(
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+              child: RichText(
+                text: TextSpan(
+                  text:
+                  'Prisma Lernzentrum - Homburg   ',
+                  style: TextStyle(color: Colors.black),
+                  children: [
+                    TextSpan(
+                        text: 'Sprache, Bildung, Integration            ',
+                        style: TextStyle(color: Colors.grey,fontSize: 19)),
+
+                    TextSpan(
+                        text: '   Wir begleiten Sie auf Ihren persönlichen und beruflichen Bildungsweg. Lassen Sie sich bei uns bestmöglich fördern!',
+                        style: TextStyle(color: Colors.black)),
+                  ],
+                ),
+              ),
+            ),*/
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                Text('Prisma Lernzentrum - Homburg'),
+
+                Text('Sprache, Bildung, Integration',style: TextStyle(fontSize: 20,color: Colors.grey),),
+
+                Text('Wir begleiten Sie auf Ihren persönlichen und beruflichen Bildungsweg. Lassen Sie sich bei uns bestmöglich fördern!'),],),
+            ),
+
             Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text("You Are",
+                  child: Text(
+                    "Du bist",
                     textAlign: TextAlign.start,
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 HomeUserContainer(
                   media: media,
-                  bottumText: 'Student',
-                  buttomIcon: Icons.access_alarm,
+                  bottumText: 'Schuler',
+                  buttomIcon: Icons.school,
                   color: Colors.green,
                 ),
                 HomeUserContainer(
                   media: media,
-                  bottumText: 'Teacher',
-                  buttomIcon: Icons.access_alarm,
+                  bottumText: 'Lehrer',
+                  buttomIcon: Icons.cast_for_education,
                   color: Colors.blue,
                 ),
               ],
@@ -45,7 +90,7 @@ class Home extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text("Options",
+                  child: Text("Optionen",
                       textAlign: TextAlign.start,
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
@@ -57,22 +102,35 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       HomeoptionsContainer(
                         media: media,
-                        bottumText: 'Courses',
+                        bottumText: 'Startseite',
                         buttomIcon: Icons.access_alarm,
+                        navigate: () {
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Study()),
+                      );
+                      }
+                        ,
                       ),
                       HomeoptionsContainer(
                         media: media,
-                        bottumText: 'Methodolgy',
-                        buttomIcon: Icons.access_alarm,
+                        bottumText: 'Kurse',
+                        buttomIcon: Icons.app_registration,
                       ),
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Books',
-                        buttomIcon: Icons.access_alarm,
+                        buttomIcon: Icons.menu_book,navigate: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Books()),
+                        );
+                      }
+                        ,
                       )
                     ],
                   ),
@@ -81,18 +139,18 @@ class Home extends StatelessWidget {
                     children: [
                       HomeoptionsContainer(
                         media: media,
-                        bottumText: 'Infographics',
-                        buttomIcon: Icons.access_alarm,
+                        bottumText: 'Aktivitäten',
+                        buttomIcon: Icons.account_balance_rounded,
                       ),
                       HomeoptionsContainer(
                         media: media,
-                        bottumText: 'Factsheets',
-                        buttomIcon: Icons.access_alarm,
+                        bottumText: 'Über uns',
+                        buttomIcon: Icons.article,
                       ),
                       HomeoptionsContainer(
                         media: media,
-                        bottumText: 'About Us',
-                        buttomIcon: Icons.access_alarm,
+                        bottumText: 'Kontakt',
+                        buttomIcon: Icons.perm_contact_calendar,
                       )
                     ],
                   ),
@@ -112,28 +170,36 @@ class HomeoptionsContainer extends StatelessWidget {
     required this.media,
     required this.bottumText,
     required this.buttomIcon,
+     this.navigate,
   }) : super(key: key);
 
   final Size media;
   final String bottumText;
   final IconData buttomIcon;
-
+  final Function ()? navigate;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.grey),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15.0),
-        child: Column(
-          children: [
-            Icon(buttomIcon),
-            SizedBox(height: media.height * 0.02),
-            Text(bottumText,style: TextStyle(color: Colors.white),)],
+    return GestureDetector(
+      onTap: navigate,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10), color: Colors.grey),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15.0),
+          child: Column(
+            children: [
+              Icon(buttomIcon),
+              SizedBox(height: media.height * 0.02),
+              Text(
+                bottumText,
+                style: TextStyle(color: Colors.white),
+              )
+            ],
+          ),
         ),
+        width: media.width * .25,
+        height: media.height * .13,
       ),
-      width: media.width * .3,
-      height: media.height * .15,
     );
   }
 }
@@ -160,8 +226,8 @@ class HomeUserContainer extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10), color: color),
           child: Icon(buttomIcon),
-          width: media.width * .3,
-          height: media.height * .15,
+          width: media.width * .25,
+          height: media.height * .13,
         ),
         SizedBox(height: media.height * 0.02),
         Text(bottumText)
