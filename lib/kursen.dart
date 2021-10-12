@@ -81,7 +81,6 @@ class Kursen extends StatelessWidget {
                     width: media.width * .9,
                   ),
                   StudyContainer(media: media,title:"Allgemeiner Kurs", zweitetitle:'Beginn: 04.10.202',drittetitle: 'Mo-Do. 17:30 bis 20:40 Uhr', ),
-                  //Mo-Do. 17:30 bis 20:40 Uhr'''
                   StudyContainer(media: media,title:"Zweitschriftlernerkurs",zweitetitle:"Beginn: 26.01.2022",drittetitle: '09:00 bis 13:00 Uhr',),
                   StudyContainer(media: media,title:"Allgemeiner Kurs",zweitetitle:"Beginn: 14.03.2021",drittetitle: '09:00 bis 13:00 Uhr',),
                   StudyContainer(media: media,title:"Allgemeiner Kurs",zweitetitle:"Beginn: 14.03.2022",drittetitle: 'Mo-Do. 18:00 bis 21:15 Uhr',),

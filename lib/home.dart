@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/kursen.dart';
+import 'package:untitled1/lehrer.dart';
 
 import 'books.dart';
 
@@ -129,13 +130,14 @@ class Home extends StatelessWidget {
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Books',
-                        buttomIcon: Icons.menu_book,navigate: () {
+                        buttomIcon: Icons.menu_book,
+                          navigate: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Books()),
                         );
                       }
-                        ,
+
                       )
                     ],
                   ),
@@ -144,8 +146,13 @@ class Home extends StatelessWidget {
                     children: [
                       HomeoptionsContainer(
                         media: media,
-                        bottumText: 'Aktivitäten',
-                        buttomIcon: Icons.account_balance_rounded,
+                        bottumText: 'Personen',
+                        buttomIcon: Icons.account_box,  navigate: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Lehrer()),
+                        );
+                      }
                       ),
                       HomeoptionsContainer(
                         media: media,
