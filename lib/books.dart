@@ -13,45 +13,114 @@ class Books extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Text(
-                  "You Are",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
-          Divider(),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Text(
-                  "You Are",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
+           Row(
+             children: [
+               Padding(
+                 padding: const EdgeInsets.symmetric(vertical: 8.0),
+                 child: Text(
+                   "Büchern",
+                   textAlign: TextAlign.start,
+                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                 ),
+               ),
+             ],
+           ),
+          Expanded (
+            child: SingleChildScrollView (
+              child: Column(
                 children: [
-                  BookContainer(
-                    media: media,image:"images/b11.png",
-                  ),BookContainer(
-                    media: media,image:"images/a11.jpg",
-                  )
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Text(
+                          "Allgemeiner Kurs",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      BookContainer(
+                        media: media,image:"images/b11.png",
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Text(
+                          "Zweitschriftlernerkurs",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      BookContainer(
+                        media: media,image:"images/b11.png",
+                      ),BookContainer(
+                        media: media,image:"images/a11.jpg",
+                      )
+                    ],
+
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Text(
+                          "Alphabetisierungskurs",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      BookContainer(
+                        media: media,image:"images/b11.png",
+                      ),BookContainer(
+                        media: media,image:"images/a11.jpg",
+                      )
+                    ],
+                  ),Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      BookContainer(
+                        media: media,image:"images/b11.png",
+                      ),BookContainer(
+                        media: media,image:"images/a11.jpg",
+                      )
+                    ],
+                  ),Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      BookContainer(
+                        media: media,image:"images/b11.png",
+                      ),BookContainer(
+                        media: media,image:"images/a11.jpg",
+                      )
+                    ],
+                  ),
                 ],
               ),
-            ],
+            ),
           )
         ],
       ),

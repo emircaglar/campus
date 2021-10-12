@@ -53,7 +53,7 @@ class MainPage extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Container(
             child: Image.asset(
-              "images/campus.png",
+              "images/prisma1.png",
               height: 50,
             ),
           ),

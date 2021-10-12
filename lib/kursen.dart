@@ -47,27 +47,27 @@ class Kursen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             HomeUser(
-                                media: media, color: Colors.grey, title: "ali"),
+                                media: media, color: Colors.grey, title: "Erste A1"),
                             HomeUser(
-                                media: media, color: Colors.grey, title: "ali"),
+                                media: media, color: Colors.grey, title: "Zweitete A1"),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             HomeUser(
-                                media: media, color: Colors.grey, title: "ali"),
+                                media: media, color: Colors.grey, title: "Erste A2"),
                             HomeUser(
-                                media: media, color: Colors.grey, title: "ali"),
+                                media: media, color: Colors.grey, title: "Zweitete A2"),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             HomeUser(
-                                media: media, color: Colors.grey, title: "ali"),
+                                media: media, color: Colors.grey, title: "Erste B1"),
                             HomeUser(
-                                media: media, color: Colors.grey, title: "ali"),
+                                media: media, color: Colors.grey, title: "Zweitete B1"),
                           ],
                         ),
                       ],
