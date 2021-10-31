@@ -20,8 +20,8 @@ class QuelleOnline extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                kursen(size: media,kursTitle:"bbb" ,color:Colors.amber ,image:"images/a11.jpg" ,text: "aaa",link: "https://www.youtube.com/",),
-                kursen(size: media,kursTitle:"bbb" ,color:Colors.amber ,image:"images/a11.jpg" ,text: "aaa",link: "https://www.youtube.com/",),
+                kursen(size: media,kursTitle:"bbb" ,color:Colors.amber ,image:"images/ahmed.jpg" ,text: "aaa",link: "https://www.youtube.com/channel/UCmPeUJLU5jkhpxMw4iUbf4Q",),
+                kursen(size: media,kursTitle:"bbb" ,color:Colors.amber ,image:"images/idealdeutsch.jpg" ,text: "aaa",link: "https://www.youtube.com/c/IdealDeutschLernen",),
                ]
               ),
             ),  Padding(
@@ -29,7 +29,7 @@ class QuelleOnline extends StatelessWidget {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                kursen(size: media,kursTitle:"bbb" ,color:Colors.amber ,image:"images/a11.jpg" ,text: "aaa",link: "https://www.youtube.com/",),
+                kursen(size: media,kursTitle:"bbb" ,color:Colors.amber ,image:"images/karislas.jpg" ,text: "aaa",link: "https://www.youtube.com/",),
                 kursen(size: media,kursTitle:"bbb" ,color:Colors.amber ,image:"images/a11.jpg" ,text: "aaa",link: "https://www.youtube.com/",),
                 ]
               ),
