@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'courses/deep.dart';
+import 'courses/deepModul.dart';
+import 'courses/ersteKurs.dart';
+import 'webview.dart';
 import 'home.dart';
 
 class Kursen extends StatelessWidget {
@@ -47,27 +51,27 @@ class Kursen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             HomeUser(
-                                media: media, color: Colors.grey, title: "Erste A1"),
+                                media: media, color: Colors.grey, title: "Erste A1",url: 'https://www.deutsch-to-go.de/',),
                             HomeUser(
-                                media: media, color: Colors.grey, title: "Zweitete A1"),
+                                media: media, color: Colors.grey, title: "Zweitete A1",url:'https://www.deutsch-to-go.de/',),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             HomeUser(
-                                media: media, color: Colors.grey, title: "Erste A2"),
+                                media: media, color: Colors.grey, title: "Erste A2",url:'https://www.deutsch-to-go.de/',),
                             HomeUser(
-                                media: media, color: Colors.grey, title: "Zweitete A2"),
+                                media: media, color: Colors.grey, title: "Zweitete A2",url: "https://opencart.abstracta.us/index.php?route=account/account",),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             HomeUser(
-                                media: media, color: Colors.grey, title: "Erste B1"),
+                                media: media, color: Colors.grey, title: "Erste B1",url: "https://opencart.abstracta.us/index.php?route=account/account",),
                             HomeUser(
-                                media: media, color: Colors.grey, title: "Zweitete B1"),
+                                media: media, color: Colors.grey, title: "Zweitete B1",url: "https://opencart.abstracta.us/index.php?route=account/account",),
                           ],
                         ),
                       ],
@@ -80,8 +84,24 @@ class Kursen extends StatelessWidget {
                         color: Colors.blue[100]),
                     width: media.width * .9,
                   ),
-                  StudyContainer(media: media,title:"Allgemeiner Kurs", zweitetitle:'Beginn: 04.10.202',drittetitle: 'Mo-Do. 17:30 bis 20:40 Uhr', ),
-                  StudyContainer(media: media,title:"Zweitschriftlernerkurs",zweitetitle:"Beginn: 26.01.2022",drittetitle: '09:00 bis 13:00 Uhr',),
+                  GestureDetector(
+                    onTap:() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => erste()),
+                      );
+                    } ,
+                    child: StudyContainer(media: media,title:"Allgemeiner Kurs", zweitetitle:'Beginn: 04.10.202',drittetitle: 'Mo-Do. 17:30 bis 20:40 Uhr', ),
+                  ),
+                  GestureDetector(
+
+                      onTap:() {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DeepModul(deeplist: [DeepModulItem(),DeepModulItem(),DeepModulItem(),DeepModulItem(),DeepModulItem(),DeepModulItem()],)),
+                        );
+                      } ,
+                      child: StudyContainer(media: media,title:"Zweitschriftlernerkurs",zweitetitle:"Beginn: 26.01.2022",drittetitle: '09:00 bis 13:00 Uhr',)),
                   StudyContainer(media: media,title:"Allgemeiner Kurs",zweitetitle:"Beginn: 14.03.2021",drittetitle: '09:00 bis 13:00 Uhr',),
                   StudyContainer(media: media,title:"Allgemeiner Kurs",zweitetitle:"Beginn: 14.03.2022",drittetitle: 'Mo-Do. 18:00 bis 21:15 Uhr',),
                   StudyContainer(media: media,title:"Alphabetisierungskurs",zweitetitle:"Beginn: 28.03.2022",drittetitle: '09:00 bis 13:00 Uhr',),
@@ -146,26 +166,31 @@ class HomeUser extends StatelessWidget {
     required this.media,
     required this.title,
     required this.color,
+    required this.url,
   }) : super(key: key);
 
   final Size media;
   final String title;
+  final String url;
   final Color color;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 4),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: color,
-      ),
-      width: media.width * .3,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          title,
-          textAlign: TextAlign.center,
+    return GestureDetector(
+      onTap: (){Navigator.push( context, MaterialPageRoute(builder: (context) => WebViewExample(url)), );},
+      child: Container(
+        margin: EdgeInsets.only(bottom: 4),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: color,
+        ),
+        width: media.width * .3,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );

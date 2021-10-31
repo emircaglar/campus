@@ -33,7 +33,7 @@ class Lehrer extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  LehrerContainer(media: media, image:"images/bayan.jpg",bottumText: 'Frau X' ),
+                  LehrerContainer(media: media, image:"images/silhouette.jpg",bottumText: 'Frau X' ),
                 ],
               ),
             )
@@ -59,7 +59,7 @@ class Lehrer extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  LehrerContainer(media: media, image:"images/bayan.jpg",bottumText: 'Frau Y' ),
+                  LehrerContainer(media: media, image:"images/silhouette.jpg",bottumText: 'Frau Y' ),
                 ],
               ),
             )

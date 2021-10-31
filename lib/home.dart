@@ -61,7 +61,7 @@ class Home extends StatelessWidget {
 
                 Text('Wir begleiten Sie auf Ihren persönlichen und beruflichen Bildungsweg. Lassen Sie sich bei uns bestmöglich fördern!'),],),
             ),
-
+/*
             Row(
               children: [
                 Padding(
@@ -74,7 +74,7 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
+           Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 HomeUserContainer(
@@ -90,7 +90,7 @@ class Home extends StatelessWidget {
                   color: Colors.blue,
                 ),
               ],
-            ),
+            ),*/
             Row(
               children: [
                 Padding(
@@ -112,14 +112,14 @@ class Home extends StatelessWidget {
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Startseite',
-                        buttomIcon: Icons.access_alarm,
+                        buttomIcon: 'images/a11.jpg',
 
 
                       ),
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Kurse',
-                        buttomIcon: Icons.app_registration,
+                        buttomIcon: 'images/a11.jpg',
                           navigate: () {
                             Navigator.push(
                               context,
@@ -130,7 +130,7 @@ class Home extends StatelessWidget {
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Books',
-                        buttomIcon: Icons.menu_book,
+                        buttomIcon: 'images/a11.jpg',
                           navigate: () {
                         Navigator.push(
                           context,
@@ -147,7 +147,7 @@ class Home extends StatelessWidget {
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Personen',
-                        buttomIcon: Icons.account_box,  navigate: () {
+                        buttomIcon: 'images/a11.jpg',  navigate: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Lehrer()),
@@ -157,12 +157,12 @@ class Home extends StatelessWidget {
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Über uns',
-                        buttomIcon: Icons.article,
+                        buttomIcon: 'images/a11.jpg',
                       ),
                       HomeoptionsContainer(
                         media: media,
                         bottumText: 'Kontakt',
-                        buttomIcon: Icons.perm_contact_calendar,
+                        buttomIcon: 'images/a11.jpg',
                       )
                     ],
                   ),
@@ -187,7 +187,7 @@ class HomeoptionsContainer extends StatelessWidget {
 
   final Size media;
   final String bottumText;
-  final IconData buttomIcon;
+  final String buttomIcon;
   final Function ()? navigate;
   @override
   Widget build(BuildContext context) {
@@ -195,22 +195,22 @@ class HomeoptionsContainer extends StatelessWidget {
       onTap: navigate,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10), color: Colors.grey),
+            borderRadius: BorderRadius.circular(10),border:Border.all()),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15.0),
           child: Column(
             children: [
-              Icon(buttomIcon),
+             Image.asset(buttomIcon,fit: BoxFit.fitHeight,),
               SizedBox(height: media.height * 0.02),
               Text(
                 bottumText,
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.black),
               )
             ],
           ),
         ),
-        width: media.width * .25,
-        height: media.height * .13,
+       width: media.width * .25,
+       // height: media.height * .13,
       ),
     );
   }
@@ -236,7 +236,8 @@ class HomeUserContainer extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10), color: color),
+              borderRadius: BorderRadius.circular(10),color: Colors.grey,border:Border.all() ),
+
           child: Icon(buttomIcon),
           width: media.width * .25,
           height: media.height * .13,
