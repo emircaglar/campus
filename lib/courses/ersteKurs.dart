@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../webview.dart';
 
-class erste extends StatelessWidget {
-  const erste({Key? key}) : super(key: key);
+class QuelleOnline extends StatelessWidget {
+  const QuelleOnline({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

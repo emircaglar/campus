@@ -4,6 +4,7 @@ import 'package:untitled1/kursen.dart';
 import 'package:untitled1/lehrer.dart';
 
 import 'books.dart';
+import 'courses/ersteKurs.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -161,8 +162,14 @@ class Home extends StatelessWidget {
                       ),
                       HomeoptionsContainer(
                         media: media,
-                        bottumText: 'Kontakt',
+                        bottumText: 'Quelle',
                         buttomIcon: 'images/a11.jpg',
+                          navigate: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => QuelleOnline()),
+                            );
+                          }
                       )
                     ],
                   ),

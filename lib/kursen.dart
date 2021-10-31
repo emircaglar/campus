@@ -88,7 +88,7 @@ class Kursen extends StatelessWidget {
                     onTap:() {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => erste()),
+                        MaterialPageRoute(builder: (context) => QuelleOnline()),
                       );
                     } ,
                     child: StudyContainer(media: media,title:"Allgemeiner Kurs", zweitetitle:'Beginn: 04.10.202',drittetitle: 'Mo-Do. 17:30 bis 20:40 Uhr', ),
